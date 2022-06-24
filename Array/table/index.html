@@ -1,0 +1,389 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/bf56c42ad7.js" crossorigin="anonymous"></script>
+
+  <style>
+    table{
+      text-align: center;
+    }
+    .table thead th {
+      text-align: center;
+      vertical-align: middle;
+    }
+    table[scope="col"]{
+      background-color: gray;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+ <h2 style="text-align: center;">Search by Name or city and zipcode</h2>
+  
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline mx-auto">
+
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button"  onclick="test()">Search</button>
+    </form>
+     <button ><i class="fa-solid fa-arrow-up" type="button"  id="s1" onclick="asc()" ></i></button>
+     <button ><i class="fa-solid fa-arrow-down" type="button" id="s2" onclick="dec()"></i></button>
+  </nav>
+ 
+  <table class="table table-bordered" id="MyTable">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="4">ID</th>
+        <th scope="col" rowspan="4">NAME</th>
+        <th scope="col" rowspan="4">USERNAME</th>
+        <th scope="col" rowspan="4">EMAIL</th>
+        <th scope="col" colspan="6">ADDRESS</th>
+        <th scope="col" rowspan="4">PHONE</th>
+        <th scope="col" rowspan="4">WEBSITE</th>
+        <th scope="col" colspan="3">COMPANY</th>
+      </tr>
+      <tr>
+        <th rowspan="2">street</th>
+        <th rowspan="2">suite</th>
+        <th rowspan="2">city</th>
+        <th rowspan="2">zip code</th>
+        <th colspan="2">geo</th>
+        <th rowspan="2">name</th>
+        <th rowspan="2">catchPhrase</th>
+        <th rowspan="2">bs</th>
+      </tr>
+      <tr>
+        <th>lat</th>
+        <th>lng</th>
+      </tr>
+    </thead>
+    <tbody id="x">
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    var users = [
+  {
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret',
+    email: 'Sincere@april.biz',
+    address: {
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      city: 'Gwenborough',
+      zipcode: '92998-3874',
+      geo: {
+        lat: '-37.3159',
+        lng: '81.1496'
+      }
+    },
+    phone: '1-770-736-8031 x56442',
+    website: 'hildegard.org',
+    company: {
+      name: 'Romaguera-Crona',
+      catchPhrase: 'Multi-layered client-server neural-net',
+      bs: 'harness real-time e-markets'
+    }
+  },
+  {
+    id: 2,
+    name: 'Ervin Howell',
+    username: 'Antonette',
+    email: 'Shanna@melissa.tv',
+    address: {
+      street: 'Victor Plains',
+      suite: 'Suite 879',
+      city: 'Wisokyburgh',
+      zipcode: '90566-7771',
+      geo: {
+        lat: '-43.9509',
+        lng: '-34.4618'
+      }
+    },
+    phone: '010-692-6593 x09125',
+    website: 'anastasia.net',
+    company: {
+      name: 'Deckow-Crist',
+      catchPhrase: 'Proactive didactic contingency',
+      bs: 'synergize scalable supply-chains'
+    }
+  },
+  {
+    id: 3,
+    name: 'Clementine Bauch',
+    username: 'Samantha',
+    email: 'Nathan@yesenia.net',
+    address: {
+      street: 'Douglas Extension',
+      suite: 'Suite 847',
+      city: 'McKenziehaven',
+      zipcode: '59590-4157',
+      geo: {
+        lat: '-68.6102',
+        lng: '-47.0653'
+      }
+    },
+    phone: '1-463-123-4447',
+    website: 'ramiro.info',
+    company: {
+      name: 'Romaguera-Jacobson',
+      catchPhrase: 'Face to face bifurcated interface',
+      bs: 'e-enable strategic applications'
+    }
+  },
+  {
+    id: 4,
+    name: 'Patricia Lebsack',
+    username: 'Karianne',
+    email: 'Julianne.OConner@kory.org',
+    address: {
+      street: 'Hoeger Mall',
+      suite: 'Apt. 692',
+      city: 'South Elvis',
+      zipcode: '53919-4257',
+      geo: {
+        lat: '29.4572',
+        lng: '-164.2990'
+      }
+    },
+    phone: '493-170-9623 x156',
+    website: 'kale.biz',
+    company: {
+      name: 'Robel-Corkery',
+      catchPhrase: 'Multi-tiered zero tolerance productivity',
+      bs: 'transition cutting-edge web services'
+    }
+  },
+  {
+    id: 5,
+    name: 'Chelsey Dietrich',
+    username: 'Kamren',
+    email: 'Lucio_Hettinger@annie.ca',
+    address: {
+      street: 'Skiles Walks',
+      suite: 'Suite 351',
+      city: 'Roscoeview',
+      zipcode: '33263',
+      geo: {
+        lat: '-31.8129',
+        lng: '62.5342'
+      }
+    },
+    phone: '(254)954-1289',
+    website: 'demarco.info',
+    company: {
+      name: 'Keebler LLC',
+      catchPhrase: 'User-centric fault-tolerant solution',
+      bs: 'revolutionize end-to-end systems'
+    }
+  },
+  {
+    id: 6,
+    name: 'Mrs. Dennis Schulist',
+    username: 'Leopoldo_Corkery',
+    email: 'Karley_Dach@jasper.info',
+    address: {
+      street: 'Norberto Crossing',
+      suite: 'Apt. 950',
+      city: 'South Christy',
+      zipcode: '23505-1337',
+      geo: {
+        lat: '-71.4197',
+        lng: '71.7478'
+      }
+    },
+    phone: '1-477-935-8478 x6430',
+    website: 'ola.org',
+    company: {
+      name: 'Considine-Lockman',
+      catchPhrase: 'Synchronised bottom-line interface',
+      bs: 'e-enable innovative applications'
+    }
+  },
+  {
+    id: 7,
+    name: 'Kurtis Weissnat',
+    username: 'Elwyn.Skiles',
+    email: 'Telly.Hoeger@billy.biz',
+    address: {
+      street: 'Rex Trail',
+      suite: 'Suite 280',
+      city: 'Howemouth',
+      zipcode: '58804-1099',
+      geo: {
+        lat: '24.8918',
+        lng: '21.8984'
+      }
+    },
+    phone: '210.067.6132',
+    website: 'elvis.io',
+    company: {
+      name: 'Johns Group',
+      catchPhrase: 'Configurable multimedia task-force',
+      bs: 'generate enterprise e-tailers'
+    }
+  },
+  {
+    id: 8,
+    name: 'Nicholas Runolfsdottir V',
+    username: 'Maxime_Nienow',
+    email: 'Sherwood@rosamond.me',
+    address: {
+      street: 'Ellsworth Summit',
+      suite: 'Suite 729',
+      city: 'Aliyaview',
+      zipcode: '45169',
+      geo: {
+        lat: '-14.3990',
+        lng: '-120.7677'
+      }
+    },
+    phone: '586.493.6943 x140',
+    website: 'jacynthe.com',
+    company: {
+      name: 'Abernathy Group',
+      catchPhrase: 'Implemented secondary concept',
+      bs: 'e-enable extensible e-tailers'
+    }
+  },
+  {
+    id: 9,
+    name: 'Glenna Reichert',
+    username: 'Delphine',
+    email: 'Chaim_McDermott@dana.io',
+    address: {
+      street: 'Dayna Park',
+      suite: 'Suite 449',
+      city: 'Bartholomebury',
+      zipcode: '76495-3109',
+      geo: {
+        lat: '24.6463',
+        lng: '-168.8889'
+      }
+    },
+    phone: '(775)976-6794 x41206',
+    website: 'conrad.com',
+    company: {
+      name: 'Yost and Sons',
+      catchPhrase: 'Switchable contextually-based project',
+      bs: 'aggregate real-time technologies'
+    }
+  },
+  {
+    id: 10,
+    name: 'Clementina DuBuque',
+    username: 'Moriah.Stanton',
+    email: 'Rey.Padberg@karina.biz',
+    address: {
+      street: 'Kattie Turnpike',
+      suite: 'Suite 198',
+      city: 'Lebsackbury',
+      zipcode: '31428-2261',
+      geo: {
+        lat: '-38.2386',
+        lng: '57.2232'
+      }
+    },
+    phone: '024-648-3804',
+    website: 'ambrose.net',
+    company: {
+      name: 'Hoeger LLC',
+      catchPhrase: 'Centralized empowering task-force',
+      bs: 'target end-to-end models'
+    }
+  }
+]
+
+
+
+
+function display(users){
+
+var html = "";
+
+for (let i = 0; i < users.length; i++) {
+  html += `
+  <tr>
+    <th scope="row">${users[i].id}</th>
+    <td>${users[i].name}</td>
+    <td>${users[i].username}</td>
+    <td>${users[i].email}</td>
+    <td>${users[i].address.street}</td>
+    <td>${users[i].address.suite}</td>
+    <td>${users[i].address.city}</td>
+    <td>${users[i].address.zipcode}</td>
+    <td>${users[i].address.geo.lat}</td>
+    <td>${users[i].address.geo.lng}</td>
+    <td>${users[i].phone}</td>
+    <td>${users[i].website}</td>
+    <td>${users[i].company.name}</td>
+    <td>${users[i].company.catchPhrase}</td>
+    <td>${users[i].company.bs}</td>
+  </tr>`;
+}
+
+document.getElementById("x").innerHTML = html;
+
+}
+
+
+display(users);
+function test(){
+
+const myFilterData = users.filter(function(value){
+if(value.name == document.getElementById("search").value || value.address.city == document.getElementById("search").value || value.phone == document.getElementById("search").value ){
+  return true;
+}
+
+});
+
+display(myFilterData);
+
+}
+
+function asc(data){
+ const  abc = users.sort(function(a,b){
+   if(a.name < b.name){
+     return -1;
+   }
+   else{
+     return 0;
+   }
+ 
+ 
+ });
+  display(abc);
+};
+
+
+
+function dec(){
+ const  xyz = users.sort(function(a,b){
+   if(b.name < a.name ){
+     return -1;
+   }
+  
+ });
+ 
+ display(xyz);
+};
+
+
+
+  </script>
+
+</body>
+
+</html>

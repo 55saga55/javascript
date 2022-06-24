@@ -1,0 +1,73 @@
+<html>
+
+
+    <body>
+
+
+            <script>
+
+              
+
+
+
+//P.D.M
+
+
+
+//startwith, endwith, includes-> true/false
+//indexof/lastIndexOf/search-> postion
+//match-> array.object
+//substr,substring
+// console.log(myTest.endsWith("Patel",))
+
+//P.D.M.T
+
+
+//split()
+//D.M.P.T
+
+// let final = str.charAt(0) + '.' + str.substr(str.indexOf(" ")+1,1)
+
+// + "." + str.substr(str.lastIndexOf(" ")+1);
+
+
+// console.log(final);
+            
+             
+
+let myName = "Patel Divyesh Minesh";
+              
+let final1 = myName.charAt(0) + '.' + myName.substr(myName.indexOf(" ")+1,1)
+
++'.'+ myName.substr(myName.lastIndexOf(" ")+1,1);
+
+              
+console.log(final1);
+
+               
+                
+let myTest = "Patel Divyesh Minesh Test";
+
+function getFirstLetters(myTest) {
+
+  const firstLetters = myTest
+    .split(' ')
+    .map(word => word[0])
+    .join(".");
+return firstLetters
+}
+console.log(getFirstLetters(myTest));
+
+
+   </script>
+
+
+
+
+    </body>
+
+
+
+
+
+</html>

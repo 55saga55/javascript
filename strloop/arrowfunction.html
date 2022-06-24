@@ -1,0 +1,64 @@
+<html>
+
+    <head>
+
+
+
+    </head>
+
+    <body>
+
+        <div id="test"></div>
+
+        <button id="mybutton"  name="myTest" >OnClick</button>
+
+    <script>
+
+        class myDisplayInfo
+        {
+
+            constructor(name)
+            {
+
+                this.name = name;
+
+            }
+
+
+            data = function()
+            {
+
+                document.getElementById("test").innerHTML = this.name;
+            }
+
+            myArrow = ()=> {
+
+                document.getElementById("test").innerHTML = this.name;
+
+
+            }
+
+
+
+
+        }
+
+
+
+        var obj = new myDisplayInfo("divyesh");
+
+
+        document.getElementById("mybutton").
+        addEventListener("click",obj.myArrow)
+
+
+    </script>
+
+
+
+
+
+    </body>
+
+
+</html>

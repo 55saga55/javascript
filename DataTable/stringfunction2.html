@@ -1,0 +1,68 @@
+<html>
+
+    <head>
+
+        <script>
+
+            var myString = "AABBCCDDEETYDDDDWERD";
+
+            var mystr = "  Vadodara   Pune   Vadodara   Pune   vadodara   pune   nodia  "
+
+            var myData = mystr.toLowerCase().split(" ");
+        
+            var map = new Map();
+
+            myData.forEach(element => {
+                
+                if(!map.has(element)){
+
+                    map.set(element,1)
+
+                }
+                else if( element == "" && map.has(element)){
+                    return map.delete("");
+                }
+
+                else
+                {
+                    var data = map.get(element);
+
+                    map.set(element, data+1);
+
+
+                }
+
+            });
+              
+
+            console.log(map);
+
+          
+            // map.forEach((element,key)=> {
+
+            //     console.log(element,key);
+            // })
+            
+            
+
+
+
+        
+            
+
+
+        </script>
+
+
+    </head>
+
+    <body>
+
+
+
+
+    </body>
+
+
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+
+          
+
+
+
+    </head>
+
+    <body>
+
+
+        <div id="demo"></div>
+
+        <script>
+
+           var employes = [
+                    {firstName: "test", lastName : "patel", city: "pune"},
+                    {firstName: "samarth", lastName : "shah",city: "Ahemedabad"},
+                    {firstName: "saurabh", lastName : "sorathyia", city:"Nodia"},
+                    {firstName: "shreyash", lastName : "jain",city : "vadodara"},
+                    {firstName: "test", lastName : "patel", city:"vadodara"},
+                    {firstName: "mukesh", lastName : "jain",city:"test"}
+
+               ];
+
+    var myResult =  employes.groupBy(function(value,index,array){
+
+            return value.city
+        });
+
+
+
+        console.table(myResult);
+
+
+      
+
+    </script>
+
+    </body>
+
+
+</html>

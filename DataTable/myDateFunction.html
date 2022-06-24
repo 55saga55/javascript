@@ -1,0 +1,335 @@
+
+<html>
+    <head>
+
+    </head>
+<body>
+
+
+ <h1 id="123">hello</h1>
+        
+        
+        
+   <script>
+
+// Version ≥ 6
+var myArray = [1,2,1,2,1]
+
+$.each(myArray, function(key, value) {
+ console.log(value);
+});
+
+
+
+// var key = 0;
+// while(value = myArray[key++]){
+//  console.log(value);
+// }
+
+
+// let myArray = [1, 2, 3, 4];
+// for (let value of myArray) {
+//  let twoValue = value * 2;
+//  console.log("2 * value is: %d", twoValue);
+
+
+
+
+// var myArray = [0, 4, 10, 12, 7, 15, 21, 99];
+
+// var i = 0, length = myArray.length;
+// for (; i < length;) {
+//  console.log(myArray[i]);
+//  i++;
+// }
+
+
+// var dates = [
+//  new Date(2021, 11, 8),
+//  new Date(2006, 2, 21),
+// // GoalKicker.com – JavaScript® Notes for Professionals 88
+//  new Date(2012, 6, 31),
+//  new Date(2002, 7, 23)
+// ];
+//  var x =  dates.sort(function(a, b) {
+//   return b-a;
+// // });
+// });
+// console.log(x);
+
+// the date objects can also sort by its difference
+// // the same way that numbers array is sorting
+//
+// // var people = [{
+//  id: 1,
+//  name: "John",
+//  age: 28
+// }, {
+//  id: 2,
+//  name: "Jane",
+//  age: 31
+// }, {
+//  id: 3,
+//  name: "Peter",
+//  age: 55
+// }];
+// // Version ≥ 5.1
+// var young = people.filter((obj) => {
+//  var flag = false;
+//  Object.values(obj).forEach((val) => {
+//  if(String(val).indexOf("J") > -1) {
+//  flag = true;
+//  return;
+//  } 
+//  });
+//  if(flag) return obj;
+// });
+// console.log(young);
+// const realArray = Array.from(arrayLike);
+// realArray.forEach(value => {/* Do something */}); // Works
+// 2. for...of:
+// Version ≥ 6
+
+// var x = [2,3,4,5,-2].reduce(function(a, b) {
+//  console.log(a, b); // prints: 1 2
+//  return a - b;
+// }, 1);
+// console.log(x);
+// var a = {
+//  0: 'Value 0',
+//  1: 'Value 1',
+//  length: 2
+// var arrayLike = {
+//  0: 'Value 0',
+//  1: 'Value 1',
+//  length: 2
+// };
+// var realArray = Array.prototype.slice.call(arrayLike);
+// // realArray = [].slice.call(arrayLike); // Shorter version
+
+// console.log(realArray.indexOf('Value 1'));
+// for(const element of arrayLike) {
+//  realArray.append(element);
+// }
+// var parent = document.getElementById('123');
+// var desiredOption = parent.querySelector('option[value="desired"]');
+// var domList = parent.children;
+// domList.indexOf(desiredOption); // Error! indexOf is not defined.
+// domList.forEach(function() {
+//  arguments.map(/* Stuff here */) // Error! map is not defined.
+// });
+// function myMethod(cb) {
+//  // This can be simplified
+//  if (cb) {
+//  cb();
+//  }
+// // GoalKicker.com – JavaScript® Notes for Professionals 65
+//  // To this
+//  cb && cb();
+ 
+// }
+// cb();
+
+// var nullableObj = null;
+// var obj = nullableObj || {};
+// console.log(obj); // this selects {}
+// var nullableObj2 = {x: 5};
+// var obj2 = nullableObj2 || {} ;
+// console.log(obj2);
+// var date1 = new Date();
+// var date2 = new Date(date1.valueOf() + 50000000000);
+// console.log(date2)
+// var dateDiff = date1.valueOf() - date2.valueOf();
+// var dateDiffInYears = dateDiff/1000/60/60/24/365; //convert milliseconds into years
+// console.log("Date difference in years : " + dateDiffInYears);
+
+// var today = new Date().toLocaleDateString('de-DE', { 
+//  day : 'numeric',
+//  month : 'numeric',
+//  year : 'numeric'
+// });
+// console.log(today);
+
+// console.log(Date.UTC(1999,8,23))
+
+// // console.log(a.toISOString);
+// function formatDate(dayOfWeek, day, month, year) {
+//  var daysOfWeek = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+//  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+//  return daysOfWeek[dayOfWeek] + " " + months[month] + " " + day + " " + year;
+// }
+// //Foo lives in a country with timezone GMT + 1
+// var birthday = new Date(1999,8,23);
+// console.log("Sagar was born on: " + formatDate(birthday.getDay(), birthday.getDate(),
+//  birthday.getMonth(), birthday.getFullYear()));
+// sendToBar(birthday.getTime());
+
+// var string = "sAgAr aBcD";
+// string = string.replace( /([a-zA-Z])([a-zA-Z]+)/ig, function(match, g1, g2) {
+//  return g1.toUpperCase() + g2.toLowerCase();
+// });
+// console.log( string );
+// console.log("abc".repeat(-1)); 
+// // var b10 = 10;
+// // base 16 String representation
+// var b16 = b10.toString(16);
+
+// console.log(b16)
+// var a = "hello";
+// var b = "helloo";
+// console.log(a.localeCompare(b)); 
+
+// an array of objects
+
+// var place = `World`;
+// var greet = `Hello ${place}!`
+// console.log(greet);
+// function C() {}
+// function D() {}
+
+//  const o = new C()
+//   const o1 = new D()
+
+// //  Object.getPrototypeOf(o) === C.prototype;
+// o instanceof C;
+// console.log(o)
+// // false, because D.prototype is nowhere in o's prototype chain
+// // Object.getPrototypeOf(o) === D.prototype;
+// o1 instanceof D;
+// console.log(o1)
+
+
+
+
+// billy = {
+//  firstname: "Billy",
+//  lastname: undefined,
+//  fullname: "Billy"
+// };
+// console.log(billy.firstname);
+// var img = new Image();
+// img.src = 'https://i.ytimg.com/vi/zecueq-mo4M/maxresdefault.jpg';
+// document.body.appendChild(img);
+
+
+// var canvas = document.createElement('canvas');
+// canvas.width = 500;
+// canvas.height = 250;
+
+// var ctx = canvas.getContext('2d');
+// // Then set properties related to the text:
+// ctx.font = '30px Cursive';
+// ctx.fillText("sagar",50,50,1000);
+// Then insert the canvas element into the page to take effect:
+// document.body.appendChild(canvas);
+// var a = prompt("how old are you");
+// console.log(a);
+
+
+// alert("hello");
+// var a = document.createElement("h1");
+// a.textContent = "hi,hello";
+// document.body.appendChild(a);
+            // document.getElementById("123").textContent="sagar patel";
+
+
+        //    var myDate = new Date();
+
+        //    var myData = "2012-12-12";
+
+        //    var myAnotherDate = new Date(myData);
+        //     console.log(myDate.getHours());
+        //    console.log(myDate.getMinutes());
+
+        //    console.log(myDate.getUTCHours());
+        //    console.log(myDate.getUTCMinutes());
+
+         
+
+// [1,2,3,4].reduce((x,y)=>console.log(x,y));
+
+        
+
+// const array = [15, 16, 17, 18, 19];
+
+// function reducer(previous, current, index, array) {
+//   const returns = previous + current;
+//   console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns},array:${array}`);
+//   return returns;
+// }
+
+// array.reduce(reducer);
+
+//         let g = ['a','b','c']
+//         console.log(g.indexOf('c'));
+// if(g.indexOf('ca'))   {
+  
+//     console.log("hi");
+
+// }   
+// else{
+//     console.log("ur welcome");
+// }      
+// a=[1,2,3,4,5];
+// console.log(a.slice(2,4));
+
+//  function a(){
+    
+//     {
+//        return "hrl"  
+//     }
+//  }
+//  console.log(a());
+
+
+// function add(item,cyz,items = []){
+//     items.push(item);
+//     return items
+// }
+    
+//     console.log(add("hi","fhfh"));
+//     console.log(add("hello"));
+
+// function greet(greeting,name,massage = greeting +""+name){
+//     console.log([greeting,name,massage]);
+// }
+// greet("hello","saga");
+// greet("hello","saga","gn")
+
+
+// let msg = "gm";
+// msg.name ="saga";
+// console.log(msg)
+// console.log(msg.name)
+
+
+// var a = [
+//   {name:"12345678"},
+//   {name:"123456"},
+//   {name:"12345"},
+//   {name:"1234"},
+//   {name:"123"}
+// ]
+
+// var newa = a.sort(function(a,b){
+//     if(a.name.length < b.name.length){
+//         return 1;
+//     }
+// })
+// var a = [1,2,3,4].reduce();
+// console.log("hello","world"); 
+// console.log(a, b);// prints: 1 2
+
+
+// var abc ="sagar PATEL".indexOf("A",7);
+// console.log(abc)
+// var elms = document.getElementsByTagName('*'); //select all elements on the page
+// console.time('Loop time');
+// array =[];
+// array.forEach(element => {
+    
+// });
+// console.timeEnd('Loop time');
+</script>
+ </body>
+</html>
