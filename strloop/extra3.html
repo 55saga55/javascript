@@ -1,0 +1,44 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+
+        <input type="text" id="myData" />
+
+        <button onclick="myFunction()">Click me</button>
+
+        <div id="output"></div>
+
+        <script>
+
+    function myFunction()
+    {
+const xhttp1 = new XMLHttpRequest();
+xhttp1.open("GET", `https://jsonplaceholder.typicode.com/posts/${document.getElementById("myData").value}`,true);
+xhttp1.onload = function()
+{
+
+    console.log(xhttp1.responseText);
+}
+
+xhttp1.send();
+  
+
+    }
+           
+  
+
+
+
+
+
+
+        </script>
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+    <head>
+
+
+
+    </head>
+
+    <body>
+
+        <div id="myName"></div>
+
+        <button  name="fullName" id="test">Change Name</button>
+
+        <script>
+
+            class MyDisplayInfo
+            {
+                constructor(firstName, lastName)
+                {
+                    this.name = firstName + ' ' + lastName;
+                    this.dataDisp = this.dataDisp.bind(this); 
+                }
+
+                myDisaplyArrow = ()=> {
+
+                    document.getElementById("myName").innerHTML = this.name;
+
+                }
+
+                 dataDisp = function()
+                 {
+                    document.getElementById("myName").innerHTML = this.name;
+
+                 }
+
+
+
+            }
+
+
+            var data = new MyDisplayInfo("div","patel");
+
+
+            document.getElementById("test").addEventListener("click",data.dataDisp);
+
+
+
+
+
+        </script>
+
+
+    </body>
+
+
+</html>

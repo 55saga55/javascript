@@ -8,34 +8,29 @@
 </head>
 <body>
 
-    <div id="test"></div>
+    <div id="test1" style="margin-bottom: 10px;">
+        <button type="button"  onclick="con()">black mode</button>
+        <button type="button" onclick="con1()">light mode</button>
+            
+</div> 
+        <div  class="user" style="margin-left: 100px">
+        <img src="tree-736885__480.jpg" id="test" alt="" onclick="abc()">
+     </div>
     <script>
+function abc(){
+        document.getElementById("test").src = "./imag2.jpg";
+}
 
-        
-// var a = 1;  
-// var b = 0;  
-// while (a <= 3)  
-// { 
-//     debugger; 
-//    a++;  
-//    b += a * 2;  
-//    console.log(b);
-// }
-
-
-
-     
+function con(){
+    document.getElementsByTagName("body")[0].style.backgroundColor="black";
+}
+function con1(){
+    document.getElementsByTagName("body")[0].style.backgroundColor="white";
+}
+    
        
         
         
-
-
-       
-
-   
-      
-
-        // console.log(removeElement);
 
 
 

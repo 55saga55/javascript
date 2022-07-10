@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+
+
+</head>
+
+<body>
+
+
+
+    <input type="text" placeholder="email" name="email" id="email" />
+    <input type="text" placeholder="password" name="password" id="password" />
+
+
+    <button onclick="saveData()">Save</button>
+    <button onclick="loadData()">loadData</button>
+</body>
+
+<script>
+
+    function saveData() {
+        var obj = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+
+        }
+
+        fetch("http://localhost:4000/accounts/authenticate", {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(y => y.json()).then(y => {
+            console.log(y);
+            localStorage.setItem("user", JSON.stringify(y));
+        })
+    }
+
+    function loadData() {
+
+        var token = JSON.parse(localStorage.getItem("user"));
+
+
+        fetch("http://localhost:4000/accounts", {
+            method: "GET",
+
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": "Bearer " + token.jwtToken
+            }
+        }).then(y => y.json()).then(y => {
+            console.log(y);
+
+
+            window.location.href = "index.html";
+
+        });
+
+    }
+</script>
+
+<form onsubmit="">
+
+    <input type="button">
+
+</form>
+
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+    <head>
+
+
+    </head>
+
+    <body>
+
+        <script>
+
+const module = {
+  firstName: "div",
+  lastName : "patel",
+  getfullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+};
+
+
+
+const unboundGetX = module.getfullName;
+//console.log(unboundGetX());
+
+ const boundGetX = module.getfullName.bind(module);
+ console.log(boundGetX());
+
+
+        </script>
+
+    </body>
+
+
+</html>
