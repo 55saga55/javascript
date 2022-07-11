@@ -37,7 +37,7 @@ function displaytab(value){
         <td>${value[i].title}</td>
         <td>${value[i].price}</td>
         <td>${value[i].category}</td>
-       <td> <button type="button" class="btn btn-outline-danger" id="${value[i].id}" onclick="deleteProduct(value)">Delete</button></td>
+       <td> <button type="button" class="btn btn-outline-danger" id="${value[i].id}" onclick="deleteProduct(event)">Delete</button></td>
      
     </tr>
 </tbody>`
@@ -49,20 +49,18 @@ function displaytab(value){
 
 document.getElementsByClassName("btn").id
 
-function deleteProduct(value){
-    for(let i = 0 ; i <myproduct.length; i++){
-    console.log(myproduct.length);
-    const id = document.getElementsByTagName("button")[i].id
-    console.log(id);
-    const url = "https://fakestoreapi.com/products/" + id;
+function deleteProduct(ev){
+    const id1 = ev.target.id;
+    console.log(id1);
+    const url = "https://fakestoreapi.com/products/" + id1;
  fetch(url,{
             method:"DELETE",
-            body:JSON.stringify(value)
+            body:JSON.stringify(ev)
         })
             .then(res=>res.json())
-            .then(value=>console.log(value))
+            .then()
     }
-}
+
 
 
 
