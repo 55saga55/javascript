@@ -1,0 +1,77 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+
+   <form onsubmit="saveData(event)" name="d" id="d" >
+        <input type="text" placeholder="title" name="title" id="title" />
+        <input type="text" placeholder="firstName" name="firstName" id="firstName" />
+        <input type="text" placeholder="lastName" name="lastName"  id="lastName"/>
+        <input type="text" placeholder="email" name="email" id="email" />
+        <input type="text" placeholder="password" name="password" id="password" /> 
+        <input type="text" placeholder="confirmPassword" name="confirmPassword" id="confirmPassword" />
+        <input type="checkbox"  name="acceptTerms"  id="acceptTerms"/>
+
+        <input type="submit" />
+
+    </form>
+
+    <script>
+
+var data = document.forms["d"];
+            var obj = {};
+            console.log(data);
+
+        function saveData(event)
+        {
+            event.preventDefault();
+            var data = document.forms["d"];
+            var obj = {};
+            console.log(data);
+
+            for(let i=0;i<data.length;i++)
+            {
+                if(data.elements[i].type !="submit")
+                {
+                    if(data.elements[i].type !="checkbox")
+                    {
+                obj[data.elements[i].name] = data.elements[i].value;
+                    }
+                    else
+                    {
+                        obj[data.elements[i].name] = data.elements[i].checked;
+                    }
+
+
+
+
+
+                }
+            }
+
+            console.log(obj);
+
+            fetch("http://localhost:4000/accounts/register",{
+                method: "POST",
+                body : JSON.stringify(obj),
+               headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+            }).then(y=> {
+                console.log(y)
+            })
+
+
+        }
+
+
+    </script>
+
+
+    </body>
+
+
+
+</html>

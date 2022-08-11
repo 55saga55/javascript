@@ -1,0 +1,49 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            async function test()
+            {
+                var d =4;
+
+                return d.toLowerCase();
+        }
+
+        
+        async function readResult()
+        {
+            try
+            {
+           var dresult= await test();
+           console.log(dresult);
+            }
+            catch(e)
+            {
+                console.log("error")
+
+            }
+
+         
+        }
+
+            readResult();
+
+            test().then(y=> {
+                console.log(y);
+            }).catch(y=> {
+                console.log(y);
+            })
+
+
+        </script>
+
+
+    </body>
+
+
+</html>

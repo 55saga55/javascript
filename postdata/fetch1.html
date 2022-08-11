@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+        <div id="table"></div>
+
+        <script>
+
+            fetch("https://jsonplaceholder.typicode.com/albums")
+            .then(y=>y.json())
+            .then(y=> {
+                    disaplyInfo(y);
+            })
+
+            function disaplyInfo(data)
+            {
+
+                document.getElementById("table").innerHTML =
+                data.map((value)=> {
+
+                  return  `<div>${value.title}</div>`
+
+                }).join(" ");
+
+
+            }
+
+
+        </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,111 @@
+<html>
+
+    <head>
+
+    </head>
+
+    <body>
+
+
+        <script>
+
+const quizData = [
+  {
+    question: "Which language runs in a web browser?",
+    a: "Java",
+    b: "C",
+    c: "Python",
+    d: "JavaScript",
+    correct: "d",
+  },
+  {
+    question: "What does CSS stand for?",
+    a: "Central Style Sheets",
+    b: "Cascading Style Sheets",
+    c: "Cascading Simple Sheets",
+    d: "Cars SUVs Sailboats",
+    correct: "b",
+  },
+  {
+    question: "What does HTML stand for?",
+    a: "Hypertext Markup Language",
+    b: "Hypertext Markdown Language",
+    c: "Hyperloop Machine Language",
+    d: "Helicopters Terminals Motorboats Lamborginis",
+    correct: "a",
+  },
+  {
+    question: "What year was JavaScript launched?",
+    a: "1996",
+    b: "1995",
+    c: "1994",
+    d: "none of the above",
+    correct: "b",
+  },
+];
+
+
+// var myPro = new Promise(function(r,e) {
+
+//     var myfilterArray = quizData.filter((value) => {
+
+//         return value.question.includes("what");
+
+//     });
+
+//     if(myfilterArray.length == 0)
+//     {
+
+//         e("array is empty");
+//     }
+//     else
+//     {
+//         r(myfilterArray);
+//     }
+
+
+// });
+
+
+// myPro.then(y=> {
+//     console.log(y);
+// }).catch(y=> {
+
+//     console.log(y);
+// })
+
+
+
+
+
+var data = fetch("https://fakestoreapi.com/products");
+console.log(data);
+var data1 = fetch("https://jsonplaceholder.typicode.com/comments");
+
+
+ Promise.all([data,data1]).then(y=> {
+    return y;
+    
+}).then(y=> {
+  var x = data1.id;
+    // console.log(x);
+})
+
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+    </body>
+
+
+
+</html>

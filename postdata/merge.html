@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <h1 id="test1">Username</h1>
+    <h1 id="test2">Title</h1>
+    <script>
+
+        //         async function display() {
+        //             // fetch posts api
+        //             let posts = await fetch("https://jsonplaceholder.typicode.com/posts");
+        //             let postdata = await posts.json();
+        //             console.log(postdata);
+
+        //             //   fetch users api
+        //             let users = await fetch(`https://jsonplaceholder.typicode.com/users`);
+        //             let userdata = await users.json();
+        //             console.log(userdata);
+
+        //             //  shows combine object of both api's
+
+        //             await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+
+        //             det1 = userdata[1].username;
+        //             document.getElementById("test1").innerHTML = det1;
+        //             console.log(det1);
+
+
+        //             det2 = postdata[1].title;
+        //             document.getElementById("test2").innerHTML = det2;
+        //             console.log(det2);
+
+        //         // let data = document.createElement('h1');
+        //         // data = userdata[1].username;
+
+        //         // document.body.append(data);
+        //         // console.log(data);
+
+        //         return userdata;
+        //  }
+
+        //         display();
+
+
+        var data = fetch("https://jsonplaceholder.typicode.com/posts");
+        // console.log(JSON.stringify(data));
+        var data1 = fetch("https://jsonplaceholder.typicode.com/users");
+
+        // // console.log(data1);
+        // //  Promise.any([data,data1]).then(y=> {
+        // //     return y.json()
+        // // }).then(y=> {
+        // //     console.log(y);
+        // // })
+
+        var dis = Promise.all([data, data1]).then(y => {
+            
+            return y;
+        }).then(y => {
+        //     console.log(y);
+            // var abc = y[0].json();
+            // console.log(typeof abc);
+            // console.log(a);
+            // console.log(y);
+            // let result = abc.map(a => a.id);
+            // console.log(result);
+            // console.log(y[0].json);
+            a: {            
+                
+            b = y[0].json(),
+            c= y[1].json();
+        }
+            // det1 = y[1].name;
+            // document.getElementById("test1").innerHTML = det1;
+            // console.log(det1);
+            //    y : {b,c}
+
+         
+            
+            return  b;
+            
+        }).then( y =>{
+
+            console.log(a);
+            // console.log(y[0].username)
+            // console.log(y[0].title)
+            // det1 = y[0].name;
+            // document.getElementById("test1").innerHTML = det1;
+            // console.log(y[0].name);
+            // y = y[0].name;
+            // document.getElementById("test1").innerHTML = y;
+            // console.log(det1);
+            // y = y[0].title;
+            // document.getElementById("test2").innerHTML = y;
+            // console.log(y);
+
+        })
+        // .than(y=>{
+        //     y = y[0].title;
+        //     document.getElementById("test1").innerHTML = y;
+        //     console.log(y);
+        // })
+        
+        // const printAddress = () => {
+        //     username.then((a) => {
+        //         console.log(a);
+        //     });
+        // };
+
+        // printAddress();
+        
+        
+        
+        // 
+
+        // const address = fetch("https://jsonplaceholder.typicode.com/users/1")
+        //     .then((response) => response.json())
+        //     .then((user) => {
+        //         return user.address;
+        //     });
+
+        // const printAddress = () => {
+        //     address.then((a) => {
+        //         console.log(a);
+        //     });
+        // };
+
+        // printAddress();
+
+
+    </script>
+</body>
+
+</html>

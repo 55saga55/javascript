@@ -1,0 +1,45 @@
+<body>
+
+
+    <script>
+
+
+async function showAvatar() {
+
+// read our JSON
+let response = await fetch('https://javascript.info//article/promise-chaining/user.json');
+let user = await response.json();
+
+console.log(user);
+
+// read github user
+let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+let githubUser = await githubResponse.json();
+
+console.log(githubUser);
+
+// show the avatar
+let img = document.createElement('img');
+img.src = githubUser.avatar_url;
+img.className = "promise-avatar-example";
+document.body.append(img);
+
+let user1 = document.createElement('b');
+user1 = githubUser.followers;
+document.body.append(user1);
+console.log (user1);
+// wait 3 seconds
+await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+img.remove();
+
+return githubUser;
+}
+
+showAvatar();
+
+
+
+    </script>
+
+</body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+
+<input type="text" placeholder="title" name="title" id="title" />
+<input type="text" placeholder="firstName" name="firstName" id="firstName" />
+<input type="text" placeholder="lastName" name="lastName"  id="lastName"/>
+<input type="text" placeholder="email" name="email" id="email" />
+<input type="text" placeholder="password" name="password" id="password" /> 
+<input type="text" placeholder="confirmPassword" name="confirmPassword" id="confirmPassword" />
+<input type="checkbox"  name="acceptTerms"  id="acceptTerms"/>
+
+<button onclick="loadDoc()"> Save</button>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("POST", "http://localhost:4000/accounts/register");
+  xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  xhttp.setRequestHeader("Authorization", "Bearer" + token.jwttoken);
+  xhttp.send(JSON.stringify(obj));
+}
+</script>
+
+</body>
+</html>

@@ -85,3 +85,14 @@
   display: grid;
 
 }
+#test1:hover .s5 {
+  display: block;
+}
+.s5{
+  display: none;
+}
+.s3:hover {
+  transform: scale(1.2);
+  display: block;
+}
+

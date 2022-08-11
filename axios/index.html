@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    
+        <html>
+
+
+    <head>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+
+    </head>
+    <body>
+
+
+            <script>
+
+                const obj = {
+
+          
+                    fullAddress  : function(userid,userEmail)
+                    {
+
+                        return `${this.city}  ${this.street} ${userid}  ${userEmail}`
+                    }
+
+
+                };
+
+                fetch("https://jsonplaceholder.typicode.com/users").then(y=> {
+
+                    return y.json()
+                }).then(y=> {
+
+                    y.forEach(element => {
+                        displayinfo(element)
+
+                        
+                    });
+
+                   
+
+                })
+
+                function displayinfo(y)
+                {   
+                   
+                   console.log( obj.fullAddress.apply(y.address,[y.id,y.email]));
+
+                }
+              
+
+
+
+            </script>
+
+
+    </body>
+
+</html>
+    </body>
+</html>
